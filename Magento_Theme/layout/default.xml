@@ -1,0 +1,25 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.panel.wrapper">
+            <container name="header.top" htmlTag="div" before="-">
+                <block name="free.shipping" template="Magento_Theme::headerTop.phtml"
+                       ifconfig="carriers/freeshipping/active"/>
+            </container>
+        </referenceContainer>
+
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/preview.jpg</argument>
+                <argument name="logo_alt" xsi:type="string">Base logo</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceContainer name="page.wrapper">
+            <container name="my-test" label="My Test" after="main.content"/>
+        </referenceContainer>
+
+
+        <move element="form.subscribe" destination="my-test" before="-"/>
+    </body>
+</page>
